@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test POST Request</title>
+</head>
+<body>
+  <h1>Test POST Request</h1>
+  <button id="calculateDiscountBtn">Calculate Discount</button>
+
+  <div id="response"></div>  <!-- Add a div to display the response -->
+
+  
+  <script>
+    document.getElementById('calculateDiscountBtn').addEventListener('click', () => {
+   
+
+    fetch(`http://localhost:3000/calculate-discount`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: 'value' })
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Display the response in the 'response' div
+        document.getElementById('response').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+      });
+  </script>
+</body>
+</html>
+  

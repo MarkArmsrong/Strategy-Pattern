@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "jsx": "react",
+  "scripts": {
+    "debug": "node dist/CalculateDiscounts.js",
+    "start": "npm run build && node dist/app.js",
+    "stop": "taskkill /F /IM node.exe",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/react": "^19.0.10",
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "reflect-metadata": "^0.2.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
