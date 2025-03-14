@@ -13,6 +13,15 @@
   
   <script>
     document.getElementById('calculateDiscountBtn').addEventListener('click', () => {
+
+      const mockOrder = {
+        orderId: '123456',
+        totalPrice: 200.0,
+        items: [
+          { productId: 'A1', productName: 'Product A', quantity: 2, price: 50.0 },
+          { productId: 'B2', productName: 'Product B', quantity: 1, price: 100.0 }
+        ]
+      };
    
 
     fetch(`http://localhost:3000/calculate-discount`, {
@@ -20,7 +29,8 @@
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ key: 'value' })
+        body: JSON.stringify({ order: mockOrder })  // Send the mock order in the request body
+//        body: JSON.stringify({ key: 'value' })
       })
       .then(response => response.text())
       .then(data => {

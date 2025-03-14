@@ -79,12 +79,10 @@ export class DiscountCoordinator {
   
   //Iterates over all active strategies and applies their discount logic to the order.
   //Uses .reduce() to sum the total discount.
-  calculateDiscount(order: Order) {
+  calculateDiscount(mockOrder: Order) {
     const totalDiscount = this.discountStrategies
-        .map(strategy => strategy.applyDiscount(order))
-        .reduce((total, discount) => total + discount, 0);
-        
-    console.log("Total Discount: ", totalDiscount);
+        .map(strategy => strategy.applyDiscount(mockOrder))
+        .reduce((total, discount) => total + discount, 0);        
     return totalDiscount;
   }
 }
