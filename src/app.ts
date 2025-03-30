@@ -48,12 +48,17 @@ app.use(bodyParser.json());
     next();
   };
 
+enum LogFormat {
+  INDENT = 2,
+  NO_INDENT = 0
+}
+
 // API endpoint to trigger discount calculation
 app.post('/calculate-discount', logDiscountCalculation,  (req: Request, res: Response) => {
   const order: Order = req.body.order;  
 
   // Log the entire Order object before passing it to DiscountCoordinator
-  console.log('Order received:', JSON.stringify(`Order ID: ` + order.orderId + ` Total Price: `+ order.totalPrice, null, 2)); // Pretty-print the order for better readability
+  console.log('Order received:', JSON.stringify(`Order ID: ` + order.orderId + ` Total Price: `+ order.totalPrice, null, LogFormat.INDENT)); // Pretty-print the order for better readability
 
 
   const discountCoordinator = new DiscountCoordinator();

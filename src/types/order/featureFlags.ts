@@ -10,7 +10,7 @@
 //to know the negative explicitly for some variant processing logic.
 const mockJson = {
   "loyalty": true,
-  "seasonalPromo": true
+  "seasonalPromo": false
 };
 
 //This enforces type safety for objects that follow this structure.
